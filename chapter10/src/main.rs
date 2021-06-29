@@ -1,10 +1,15 @@
-fn main() {
-    let tweet = Tweet {
-        username: "horse_ebooks".to_string(),
-        content: "of course, you already know".to_string(),
-        reply: false,
-        retweet: false,
-    };
+use std::fmt::Display;
 
-    println!("1 new tweet: {}", tweet.summarize());
+fn longest_with_an_announcement<'a, T>(x: &'a str, y: &'a str, ann: T) -> &'a str
+where
+    T: Display,
+{
+    println!("Announcement! {}", ann);
+    if x.len() > y.len() {
+        x
+    } else {
+        y
+    }
 }
+
+fn main() {}

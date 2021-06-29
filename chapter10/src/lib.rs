@@ -1,5 +1,11 @@
+use std::fmt::format;
+
 pub trait Summary {
-    fn summarize(&self) -> String;
+    fn summarize(&self) -> String {
+        "(Read more...)".to_string()
+    }
+
+    fn summarize_author(&self) -> String;
 }
 
 pub struct NewsArticle {
@@ -12,6 +18,10 @@ pub struct NewsArticle {
 impl Summary for NewsArticle {
     fn summarize(&self) -> String {
         format!("{}, {} ({})", self.headline, self.author, self.location)
+    }
+
+    fn summarize_author(&self) -> String {
+        format!("Read more from {}", self.author)
     }
 }
 
@@ -26,4 +36,16 @@ impl Summary for Tweet {
     fn summarize(&self) -> String {
         format!("{}: {}", self.username, self.content)
     }
+
+    fn summarize_author(&self) -> String {
+        format!("@{}", self.username)
+    }
+}
+
+pub fn notify(item: &impl Summary) -> () {
+    println!("Breaking news! {}", item.summarize());
+}
+
+pub fn notify2<T: Summary>(item: &T) {
+    println!("Breaking news! {}", item.summarize());
 }
