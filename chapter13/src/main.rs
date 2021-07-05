@@ -1,72 +1,35 @@
-use std::collections::HashMap;
-use std::thread;
-use std::time::Duration;
-
-fn main() {
-    let simulated_user_specified_value = 10;
-    let simulated_random_number = 7;
-
-    generate_workout(simulated_user_specified_value, simulated_random_number);
+struct Counter {
+    count: u32,
 }
 
-fn generate_workout(intensity: u32, random_number: u32) {
-    let mut expensive_result = Cacher::new(|num| {
-        println!("calculating slowly...");
-        thread::sleep(Duration::from_secs(2));
-        num
-    });
-    if intensity < 25 {
-        println!("Today, do {} pushups!", expensive_result.value(intensity));
-        println!("Next, do {} situps!", expensive_result.value(intensity));
-    } else {
-        if random_number == 3 {
-            println!("Take a break today! Remember to stay hydrated!");
+impl Counter {
+    fn new() -> Counter {
+        Counter { count: 0 }
+    }
+}
+
+impl Iterator for Counter {
+    type Item = u32;
+    fn next(&mut self) -> Option<Self::Item> {
+        if self.count < 5 {
+            self.count += 1;
+            Some(self.count)
         } else {
-            println!(
-                "Today, run for {} minutes!",
-                expensive_result.value(intensity)
-            );
+            None
         }
     }
 }
 
-struct Cacher<T>
-where
-    T: Fn(u32) -> u32,
-{
-    calculation: T,
-    value: HashMap<u32, u32>,
-}
-
-impl<T> Cacher<T>
-where
-    T: Fn(u32) -> u32,
-{
-    fn new(calculation: T) -> Cacher<T> {
-        Cacher {
-            calculation,
-            value: HashMap::new(),
-        }
-    }
-
-    fn value(&mut self, k: u32) -> u32 {
-        match self.value.get(&k) {
-            Some(v) => *v,
-            None => {
-                let v = (self.calculation)(k);
-                self.value.insert(k, v);
-                v
-            }
-        }
-    }
-}
+fn main() {}
 
 #[test]
-fn call_with_different_values() {
-    let mut c = Cacher::new(|a| a);
+fn calling_next_directly() {
+    let mut counter = Counter::new();
 
-    let _v1 = c.value(1);
-    let v2 = c.value(2);
-
-    assert_eq!(v2, 2);
+    assert_eq!(counter.next(), Some(1));
+    assert_eq!(counter.next(), Some(2));
+    assert_eq!(counter.next(), Some(3));
+    assert_eq!(counter.next(), Some(4));
+    assert_eq!(counter.next(), Some(5));
+    assert_eq!(counter.next(), None);
 }
