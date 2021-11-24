@@ -1,4 +1,4 @@
-fn f1() {
+fn variables_and_mutability() {
     let mut x = 5;
     println!("The value of x is: {}", x);
     x = 6;
@@ -7,7 +7,7 @@ fn f1() {
 
 const THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;
 
-fn f2() {
+fn shadowing_1() {
     let x = 5;
 
     let x = x + 1;
@@ -20,9 +20,13 @@ fn f2() {
     println!("The value of x is: {}", x);
 }
 
-fn main() {
+fn shadowing_2() {
     let spaces = "   ";
     let spaces = spaces.len();
 
     println!("The value of spaces is: {}", spaces);
+}
+
+fn main() {
+    shadowing_2();
 }
