@@ -1,22 +1,22 @@
-fn f1() {
+fn functions() {
     println!("Hello, world!");
 
-    f2();
+    another_function_1();
 }
 
-fn f2() {
+fn another_function_1() {
     println!("Another function.");
 }
 
-fn f3() {
-    f4(5);
+fn function_parameters_1() {
+    another_function_2(5);
 }
 
-fn f4(x: i32) {
+fn another_function_2(x: i32) {
     println!("The value of x is: {}", x);
 }
 
-fn f5() {
+fn function_parameters_2() {
     print_labeled_measurement(5, 'h');
 }
 
@@ -24,11 +24,11 @@ fn print_labeled_measurement(value: i32, unit_label: char) {
     println!("The measurement is: {}{}", value, unit_label);
 }
 
-fn f6() {
+fn function_bodies_contain_statements_and_expressions_1() {
     let y = 6;
 }
 
-fn f7() {
+fn function_bodies_contain_statements_and_expressions_2() {
     let x = 5;
 
     let y = {
@@ -39,17 +39,17 @@ fn f7() {
     println!("The value of y is: {}", y);
 }
 
-fn five() -> i32 {
-    5
-}
-
-fn f8() {
+fn functions_with_return_values_1() {
     let x = five();
 
     println!("The value of x is: {}", x);
 }
 
-fn main() {
+fn five() -> i32 {
+    5
+}
+
+fn functions_with_return_values_2() {
     let x = plus_one(5);
 
     println!("The value of x is: {}", x);
@@ -57,4 +57,8 @@ fn main() {
 
 fn plus_one(x: i32) -> i32 {
     x + 1
+}
+
+fn main() {
+    functions_with_return_values_2();
 }

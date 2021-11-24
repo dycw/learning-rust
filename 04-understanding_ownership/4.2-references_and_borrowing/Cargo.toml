@@ -1,5 +1,5 @@
 [package]
-name = "chapter4-2"
+name = "references_and_borrowing"
 version = "0.1.0"
 edition = "2021"
 
