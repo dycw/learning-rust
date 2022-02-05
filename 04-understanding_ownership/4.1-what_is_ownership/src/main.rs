@@ -5,6 +5,7 @@ fn variable_scope() {
 fn the_string_type_1() {
     let s = String::from("hello");
 }
+
 fn the_string_type_2() {
     let mut s = String::from("hello");
     s.push_str(", world!");
@@ -35,7 +36,6 @@ fn ways_variables_and_data_interact_clone() {
 fn stack_only_data_copy() {
     let x = 5;
     let y = x;
-
     println!("x = {}, y = {}", x, y);
 }
 
@@ -47,7 +47,7 @@ fn makes_copy(some_integer: i32) {
     println!("{}", some_integer)
 }
 
-fn main_1() {
+fn return_values_and_scope_1() {
     let s = String::from("hello");
     takes_ownership(s);
 
@@ -64,7 +64,7 @@ fn takes_and_gives_back(a_string: String) -> String {
     a_string
 }
 
-fn main_2() {
+fn return_values_and_scope_2() {
     let s1 = gives_ownership();
     let s2 = String::from("hello");
     let s3 = takes_and_gives_back(s2);
@@ -75,8 +75,12 @@ fn calculate_length(s: String) -> (String, usize) {
     (s, length)
 }
 
-fn main() {
+fn return_values_and_scope_3() {
     let s1 = String::from("hello");
     let (s2, len) = calculate_length(s1);
     println!("The length of '{}' is {}.", s2, len)
+}
+
+fn main() {
+    return_values_and_scope_3()
 }
