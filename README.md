@@ -1,2 +1,3 @@
 # rust-learning
-Messing around with rust
+
+Learning [The Rust Programming Language](https://doc.rust-lang.org/stable/book/).
