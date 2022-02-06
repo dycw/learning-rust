@@ -60,6 +60,21 @@ fn enum_values_4() {
     m.call();
 }
 
+// The Option Enum and Its Advantages Over Null Values
+
+use std::option::Option;
+
+fn the_option_enum_and_its_advantages_over_null_values_1() {
+    let some_number = Some(5);
+    let some_string = Some("a string");
+
+    let absent_number: Option<i32> = None;
+}
+
+fn the_option_enum_and_its_advantages_over_null_values_2() {
+    let x: i8 = 5;
+    let y: Option<i8> = Some(5);
+}
 fn main() {
-    enum_values_4();
+    the_option_enum_and_its_advantages_over_null_values_1();
 }
