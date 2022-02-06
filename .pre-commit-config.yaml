@@ -1,9 +1,5 @@
 repos:
   # fixers
-  - repo: https://github.com/jumanjihouse/pre-commit-hooks
-    rev: 2.1.5
-    hooks:
-      - id: shfmt
   - repo: https://github.com/pre-commit/mirrors-prettier
     rev: v2.5.1
     hooks:
@@ -12,18 +8,10 @@ repos:
     rev: v4.1.0
     hooks:
       - id: end-of-file-fixer
-      - id: fix-byte-order-marker
-      - id: fix-encoding-pragma
-        args: [--remove]
       - id: mixed-line-ending
         args: [--fix=lf]
       - id: trailing-whitespace
   # linters
-  - repo: https://github.com/jumanjihouse/pre-commit-hooks
-    rev: 2.1.5
-    hooks:
-      - id: script-must-have-extension
-      - id: script-must-not-have-extension
   - repo: https://github.com/markdownlint/markdownlint
     rev: v0.11.0
     hooks:
@@ -47,10 +35,3 @@ repos:
       - id: destroyed-symlinks
       - id: detect-private-key
       - id: no-commit-to-branch
-  - repo: https://github.com/shellcheck-py/shellcheck-py
-    rev: v0.8.0.3
-    hooks:
-      - id: shellcheck
-  - repo: meta
-    hooks:
-      - id: check-useless-excludes
