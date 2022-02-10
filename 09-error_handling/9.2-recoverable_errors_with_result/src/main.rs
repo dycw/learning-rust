@@ -1,5 +1,7 @@
 // Recoverable Errors with Result
 
+use core::panic;
+use core::panicking::panic;
 use std::fs::File;
 
 fn recoverable_errors_with_result_1() {
@@ -36,6 +38,18 @@ fn matching_on_different_errors_1() {
     };
 }
 
+fn matching_on_different_errors_2() {
+    let f = File::open("matching_on_different_errors_2.txt").unwrap_or_else(|error| {
+        if error.kind() == ErrorKind::NotFound {
+            File::create("matching_on_different_errors_2.txt").unwrap_or_else(|error| {
+                panic!("Problem creating the file: {:?}", error);
+            })
+        } else {
+            panic!("Problem opening the file: {:?}", error)
+        }
+    });
+}
+
 fn main() {
-    matching_on_different_errors_1();
+    matching_on_different_errors_2();
 }
