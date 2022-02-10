@@ -19,13 +19,13 @@ fn recoverable_errors_with_result_2() {
 
 use std::io::ErrorKind;
 
-fn matching_on_different_errors() {
-    let f = File::open("matching_on_different_errors.txt");
+fn matching_on_different_errors_1() {
+    let f = File::open("matching_on_different_errors_1.txt");
 
     let f = match f {
         Ok(file) => file,
         Err(error) => match error.kind() {
-            ErrorKind::NotFound => match File::create("matching_on_different_errors.txt") {
+            ErrorKind::NotFound => match File::create("matching_on_different_errors_1.txt") {
                 Ok(fc) => fc,
                 Err(e) => panic!("Problem creating the file: {:?}", e),
             },
@@ -37,5 +37,5 @@ fn matching_on_different_errors() {
 }
 
 fn main() {
-    matching_on_different_errors();
+    matching_on_different_errors_1();
 }
