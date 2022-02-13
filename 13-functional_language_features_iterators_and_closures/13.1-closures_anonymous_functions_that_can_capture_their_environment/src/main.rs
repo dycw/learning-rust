@@ -252,6 +252,18 @@ mod tests_2 {
     }
 }
 
+// Capturing the Environment with Closures
+
+fn capturing_the_environment_with_closures() {
+    let x = 4;
+
+    let equal_to_x = |z| z == x;
+
+    let y = 4;
+
+    assert!(equal_to_x(y));
+}
+
 fn main() {
-    storing_closures_using_generic_parameters_and_the_fn_traits();
+    capturing_the_environment_with_closures();
 }
