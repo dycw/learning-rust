@@ -1,4 +1,3 @@
-// Writing a Failing Test
 use std::{env, process};
 
 use developing_the_librarys_functionality_with_test_driven_development::{run, Config};
