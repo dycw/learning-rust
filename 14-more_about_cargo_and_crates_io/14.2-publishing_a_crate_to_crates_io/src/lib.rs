@@ -21,6 +21,7 @@ pub fn add_one(x: i32) -> i32 {
 
 pub mod kinds {
     /// The primary colors according to the RYB color model.
+    #[derive(PartialEq)]
     pub enum PrimaryColor {
         Red,
         Yellow,
@@ -41,7 +42,15 @@ pub mod utils {
     /// Combines two primary colors in equal amounts to create
     /// a secondary color.
     pub fn mix(c1: PrimaryColor, c2: PrimaryColor) -> SecondaryColor {
-        // --snip--
+        match (c1, c2) {
+            (PrimaryColor::Red, PrimaryColor::Yellow) => SecondaryColor::Orange,
+            (PrimaryColor::Red, PrimaryColor::Blue) => SecondaryColor::Purple,
+            (PrimaryColor::Yellow, PrimaryColor::Red) => SecondaryColor::Orange,
+            (PrimaryColor::Yellow, PrimaryColor::Blue) => SecondaryColor::Green,
+            (PrimaryColor::Blue, PrimaryColor::Red) => SecondaryColor::Purple,
+            (PrimaryColor::Blue, PrimaryColor::Yellow) => SecondaryColor::Green,
+            _ => panic!("Cannot mix a primary color with itself"),
+        }
     }
 }
 
