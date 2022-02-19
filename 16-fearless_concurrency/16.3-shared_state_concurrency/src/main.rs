@@ -16,7 +16,6 @@ fn the_api_of_mutex_t() {
 // Sharing a Mutex<T> Between Multiple Threads
 // Multiple Ownership with Multiple Threads
 
-use std::rc::Rc;
 use std::sync::Arc;
 use std::thread;
 
