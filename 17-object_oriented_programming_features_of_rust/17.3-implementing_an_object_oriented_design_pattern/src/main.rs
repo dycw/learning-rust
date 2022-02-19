@@ -1,9 +1,9 @@
 // Implementing an Object-Oriented Design Pattern
 
-use implementing_an_object_oriented_design_pattern::Post2;
+use implementing_an_object_oriented_design_pattern::Post;
 
 fn implementing_an_object_oriented_design_pattern() {
-    let mut post = Post2::new();
+    let mut post = Post::new();
 
     post.add_text("I ate a salad for lunch today");
     assert_eq!("", post.content());
