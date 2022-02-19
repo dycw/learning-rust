@@ -19,5 +19,5 @@ fn more_information_about_the_cons_list() {
 }
 
 fn main() {
-    using_a_box_t_to_point_to_data_on_the_heap()
+    more_information_about_the_cons_list();
 }
