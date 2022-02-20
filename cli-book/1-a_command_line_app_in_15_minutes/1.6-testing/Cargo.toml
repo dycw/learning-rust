@@ -7,4 +7,9 @@ edition = "2021"
 
 [dependencies]
 clap = { version = "3.1.0", features = ["derive"] }
-anyhow = { version = "1.0.54" }
+anyhow = "1.0.54"
+
+[dev-dependencies]
+assert_cmd = "2.0.4"
+predicates = "2.1.1"
+assert_fs = "1.0.7"
