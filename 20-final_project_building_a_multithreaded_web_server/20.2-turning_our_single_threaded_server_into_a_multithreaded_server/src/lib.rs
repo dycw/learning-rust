@@ -234,6 +234,7 @@ impl Worker6 {
         Worker6 { id, thread }
     }
 }
+
 pub struct ThreadPool7 {
     workers: Vec<Worker7>,
     sender: mpsc::Sender<Job7>,
