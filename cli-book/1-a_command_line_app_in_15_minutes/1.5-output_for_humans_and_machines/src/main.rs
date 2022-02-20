@@ -1,121 +1,65 @@
-// Unwrapping
+// Printing “Hello World”
 
-use clap::Parser;
-
-#[derive(Parser)]
-struct Cli {
-    pattern: String,
-    #[clap(parse(from_os_str))]
-    path: std::path::PathBuf,
+fn printing_hello_world() {
+    println!("Hello World");
 }
 
-fn unwrapping_1() {
-    let args: Cli = Cli::parse();
+// Using println
 
-    let result = std::fs::read_to_string(&args.path);
-    let content = match result {
-        Ok(content) => content,
-        Err(error) => {
-            panic!("Can't deal with {}, just exit here", error);
-        }
-    };
-
-    println!("File content: {}", content);
-
-    for line in content.lines() {
-        if line.contains(&args.pattern) {
-            println!("{}", line);
-        }
-    }
+fn using_println_1() {
+    let x = 42;
+    println!("My lucky number is {}.", x);
 }
 
-fn unwrapping_2() {
-    let args: Cli = Cli::parse();
-
-    let content = std::fs::read_to_string(&args.path).unwrap();
-
-    println!("File content: {}", content);
-
-    for line in content.lines() {
-        if line.contains(&args.pattern) {
-            println!("{}", line);
-        }
-    }
+fn using_println_2() {
+    let xs = vec![1, 2, 3];
+    println!("The list is: {:?}", xs);
 }
 
-// No need to panic
+// Printing errors
 
-fn no_need_to_panic() -> Result<(), Box<dyn std::error::Error>> {
-    let args: Cli = Cli::parse();
-
-    let result = std::fs::read_to_string(&args.path);
-    let content = match result {
-        Ok(content) => content,
-        Err(error) => return Err(error.into()),
-    };
-
-    for line in content.lines() {
-        if line.contains(&args.pattern) {
-            println!("{}", line);
-        }
-    }
-
-    Ok(())
+fn printing_errors() {
+    println!("This is information");
+    eprintln!("This is an error! :(");
 }
 
-// Question Mark
+// A note on printing performance
 
-fn question_mark() -> Result<(), Box<dyn std::error::Error>> {
-    let args: Cli = Cli::parse();
+use std::io::{self, Write};
 
-    let content = std::fs::read_to_string(&args.path)?;
-
-    for line in content.lines() {
-        if line.contains(&args.pattern) {
-            println!("{}", line);
-        }
-    }
-
-    Ok(())
+fn a_note_on_printing_performance() {
+    let stdout = io::stdout(); // get the global stdout entity
+    let mut handle = io::BufWriter::new(stdout); // optional: wrap that handle in a buffer
+    writeln!(handle, "foo: {}", 42); // add `?` if you care about errors here
 }
 
-// Providing Context
+// Showing a progress bar
 
-#[derive(Debug)]
-struct CustomError(String);
+use std::{thread, time::Duration};
 
-fn providing_context_1() -> Result<(), CustomError> {
-    let args: Cli = Cli::parse();
-
-    let content = std::fs::read_to_string(&args.path)
-        .map_err(|err| CustomError(format!("Error reading `{:?}`: {}", &args.path, err)))?;
-
-    for line in content.lines() {
-        if line.contains(&args.pattern) {
-            println!("{}", line);
-        }
+fn showing_a_progress_bar() {
+    let pb = indicatif::ProgressBar::new(100);
+    for i in 0..100 {
+        thread::sleep(Duration::from_millis(10));
+        pb.println(format!("[+] finished #{}", i));
+        pb.inc(1);
     }
-
-    Ok(())
+    pb.finish_with_message("done");
 }
 
-use anyhow::{Context, Result as AnyhowResult};
+// Logging
 
-fn providing_context_2() -> AnyhowResult<()> {
-    let args: Cli = Cli::parse();
+use env_logger;
+use log::{info, warn};
 
-    let content = std::fs::read_to_string(&args.path)
-        .with_context(|| format!("could not read file `{:?}`", &args.path))?;
-
-    for line in content.lines() {
-        if line.contains(&args.pattern) {
-            println!("{}", line);
-        }
-    }
-
-    Ok(())
+fn logging() {
+    // run as:
+    //     env RUST_LOG=info cargo run
+    env_logger::init();
+    info!("starting up");
+    warn!("oops, nothing implemented!");
 }
 
 fn main() {
-    providing_context_2();
+    logging();
 }
