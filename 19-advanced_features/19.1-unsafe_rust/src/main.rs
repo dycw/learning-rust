@@ -115,5 +115,5 @@ unsafe impl Foo for i32 {
 }
 
 fn main() {
-    using_extern_functions_to_call_external_code();
+    accessing_or_modifying_a_mutable_static_variable_2();
 }
