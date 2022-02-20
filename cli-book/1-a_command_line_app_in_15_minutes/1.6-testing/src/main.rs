@@ -66,6 +66,21 @@ fn find_a_match() {
     assert_eq!(result, b"lorem ipsum\n");
 }
 
+// Splitting your code into library and binary targets
+
+use testing::find_matches_3;
+
+fn splitting_your_code_into_library_and_binary_targets() -> Result<()> {
+    let args: Cli = Cli::parse();
+
+    let content = std::fs::read_to_string(&args.path)
+        .with_context(|| format!("could not read file `{}`", args.path.display()))?;
+
+    find_matches_3(&content, &args.pattern, &mut std::io::stdout());
+
+    Ok(())
+}
+
 fn main() {
-    making_your_code_testable_2();
+    splitting_your_code_into_library_and_binary_targets();
 }
