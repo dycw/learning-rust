@@ -3,12 +3,11 @@ name = "function_programming"
 version = "0.1.0"
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [dependencies]
+lazy_static = "1"
+cached = "0.5"
+metaderive = { path = "metaderive" }
 
-# lazy_static = "1"
-# cached = "0.5"
-# metaderive = { path = "metaderive" }
 [[bin]]
 name = "intro_binding"
 path = "intro_binding.rs"
