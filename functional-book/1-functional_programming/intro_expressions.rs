@@ -1,23 +1,24 @@
 struct MyStruct {
     a: u32,
     b: f32,
-    c: String,
+    c: String
 }
 
 enum Term {
     TermVal { value: String },
     TermVar { symbol: String },
     TermApp { f: Box<Term>, x: Box<Term> },
-    TermAbs { arg: String, body: Box<Term> },
+    TermAbs { arg: String, body: Box<Term> }
 }
 
 fn main() {
+
     let x = {
         fn f(x: u32) -> u32 {
-            x * x
+            x*x
         }
         let y = f(5);
-        y * 3
+        y*3
     };
 
     let x;
@@ -32,24 +33,19 @@ fn main() {
     MyStruct {
         a: 1,
         b: 1.0,
-        c: "".to_string(),
+        c: "".to_string()
     };
 
     (1, 1.0, "".to_string());
 
     let mut t = Term::TermVar {
-        symbol: "".to_string(),
+        symbol: "".to_string()
     };
     match t {
-        Term::TermVal { value: v1 } => v1,
-        Term::TermVar { symbol: v1 } => v1,
-        Term::TermApp {
-            f: ref v1,
-            x: ref v2,
-        } => "TermApp(?,?)".to_string(),
-        Term::TermAbs {
-            arg: ref mut v1,
-            body: ref mut v2,
-        } => "TermAbs(?,?)".to_string(),
+       Term::TermVal { value: v1 } => v1,
+       Term::TermVar { symbol: v1 } => v1,
+       Term::TermApp { f: ref v1, x: ref v2 } => "TermApp(?,?)".to_string(),
+       Term::TermAbs { arg: ref mut v1, body: ref mut v2 } => "TermAbs(?,?)".to_string()
     };
+
 }
