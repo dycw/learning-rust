@@ -1,18 +1,14 @@
-use termion::event::Key;
-
+extern crate floating_duration;
+use std::env;
+use std::fs::File;
 use std::io::{self, Read, Write};
-use termion::input::TermRead;
+use std::time::Instant;
+use std::{thread, time};
+extern crate termion;
+use std::cmp;
 use termion::raw;
 use termion::raw::IntoRawMode;
-use termion::{clear, cursor, style};
-extern crate termion;
-use std::{
-    env,
-    fs::File,
-    io::{self, Read},
-    thread,
-    time::Instant,
-};
+use termion::{clear, cursor};
 
 fn variable_summary<W: Write>(stdout: &mut raw::RawTerminal<W>, vname: &str, data: Vec<f64>) {
     let (avg, dev) = variable_summary_stats(data);
@@ -32,6 +28,18 @@ fn variable_summary_stats(data: Vec<f64>) -> (f64, f64) {
         / (N as f64))
         .sqrt();
     (avg, dev)
+}
+
+fn variable_summary_print<W: Write>(
+    stdout: &mut raw::RawTerminal<W>,
+    vname: &str,
+    avg: f64,
+    dev: f64,
+) {
+    //print formatted output
+    write!(stdout, "Average of {:25}{:.6}\r\n", vname, avg);
+    write!(stdout, "Standard deviation of {:14}{:.6}\r\n", vname, dev);
+    write!(stdout, "\r\n");
 }
 
 pub fn run_simulation() {
@@ -103,6 +111,11 @@ pub fn run_simulation() {
         let now = Instant::now();
         let dt = now.duration_since(prev_loop_time).as_secs_f64();
         prev_loop_time = now;
+
+        record_location.push(location);
+        record_velocity.push(velocity);
+        record_acceleration.push(acceleration);
+        record_voltage.push(up_input_voltage - down_input_voltage);
 
         location = location + velocity * dt;
         velocity = velocity + acceleration * dt;
