@@ -1,7 +1,7 @@
 # rust-learning
 
-| folder                                                              | source                                                                          | author(s)                            |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------ |
-| [`book`](./book)                                                    | [The Rust Programming Language](https://doc.rust-lang.org/stable/book/)         | Steve Klabnik, Carol Nichols, et al. |
-| [`cli-book`](dex.html)                                              | N/A                                                                             |
-| [`functional-book`](https://github.com/dycw/rust-learning/cli-book) | [Command Line Applications in Rust](https://rust-cli.github.io/book/index.html) | N/A                                  |
+| folder                                 | source                                                                                                                | author(s)                            |
+| -------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ------------------------------------ |
+| [`book`](./book)                       | [The Rust Programming Language](https://doc.rust-lang.org/stable/book/)                                               | Steve Klabnik, Carol Nichols, et al. |
+| [`cli-book`](./cli-book)               | [Command Line Applications in Rust](https://rust-cli.github.io/book/index.html)                                       | N/A                                  |
+| [`functional-book`](./functional-book) | [Hands-On Functional Programming in Rust](https://github.com/packtpublishing/hands-on-functional-programming-in-rust) | Andrew Johnson                       |
