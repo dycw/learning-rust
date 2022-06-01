@@ -1,3 +1,6 @@
 fn main() {
-    println!("Hello, world!");
+    {
+        let n = 10;
+    }
+    print!("{} ", n);
 }

@@ -1,3 +1,12 @@
 fn main() {
-    println!("Hello, world!");
+    {
+        let n = 10;
+        {
+            let m = 4;
+            {
+                print!("{} ", n);
+            }
+            print!("{}", n + m);
+        } // End of the scope of `m`
+    } // End of the scope of `n`
 }

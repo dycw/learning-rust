@@ -1,3 +1,9 @@
 fn main() {
-    println!("Hello, world!");
+    let n = 0;
+    if n > 0 {
+        print!("number is");
+        print!(" positive");
+    } else {
+        print!("not positive");
+    }
 }

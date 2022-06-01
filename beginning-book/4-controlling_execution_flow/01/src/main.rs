@@ -1,3 +1,6 @@
 fn main() {
-    println!("Hello, world!");
+    let n = 4;
+    if n > 0 {
+        print!("positive");
+    }
 }

@@ -1,3 +1,5 @@
 fn main() {
-    println!("Hello, world!");
+    for n in 1..11 {
+        print!("{} ", n * n);
+    }
 }

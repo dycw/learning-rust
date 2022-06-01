@@ -1,3 +1,4 @@
 fn main() {
-    println!("Hello, world!");
+    let cond = true;
+    let val = if cond { "abc" } else { 12 };
 }
