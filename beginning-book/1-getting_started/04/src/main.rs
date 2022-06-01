@@ -1,3 +1,3 @@
 fn main() {
-    print!("{}, {}!", "Hello", "world");
+    print!("First line\nSecond line\nThird line\n");
 }
