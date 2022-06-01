@@ -1,3 +1,4 @@
 fn main() {
-    println!("Hello, world!");
+    let number1 = 12;
+    let _number2 = number1;
 }

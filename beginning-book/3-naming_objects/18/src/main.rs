@@ -1,3 +1,3 @@
 fn main() {
-    println!("Hello, world!");
+    print!("{} {} {}", "abc" < "abcd", "ab" < "ac", "A" < "a");
 }

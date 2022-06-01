@@ -1,3 +1,4 @@
 fn main() {
-    println!("Hello, world!");
+    let _number = 12;
+    print!("{}", _number);
 }
