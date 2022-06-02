@@ -1,3 +1,11 @@
 fn main() {
-    println!("Hello, world!");
+    let truthy = 1;
+    let falsy = 0;
+    print!(
+        "{} {} {} {}",
+        truthy != 0,
+        falsy != 0,
+        65 as char,
+        224 as char
+    );
 }

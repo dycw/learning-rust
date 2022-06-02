@@ -1,3 +1,5 @@
 fn main() {
-    println!("Hello, world!");
+    let e_grave = 'è';
+    let japanese_character = 'さ';
+    println!("{} {}", e_grave, japanese_character);
 }

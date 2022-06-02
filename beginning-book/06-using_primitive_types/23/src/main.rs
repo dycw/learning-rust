@@ -1,3 +1,6 @@
 fn main() {
-    println!("Hello, world!");
+    let a: bool = true;
+    print!("[{}]", a);
+    let b: char = 'a';
+    print!("[{}]", b);
 }

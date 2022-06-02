@@ -1,3 +1,4 @@
+#[allow(overflowing_literals)]
 fn main() {
     let a = 500 as i8;
     let b = 100_000 as u16;

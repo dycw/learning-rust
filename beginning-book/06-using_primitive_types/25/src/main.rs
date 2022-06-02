@@ -1,3 +1,4 @@
 fn main() {
-    println!("Hello, world!");
+    let _a = 'a' + 'b';
+    let _b = false + true;
 }

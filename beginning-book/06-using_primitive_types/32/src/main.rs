@@ -1,3 +1,4 @@
 fn main() {
-    println!("Hello, world!");
+    const N: usize = 20;
+    let _ = [0; N];
 }
