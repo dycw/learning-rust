@@ -1,3 +1,4 @@
 fn main() {
-    println!("Hello, world!");
+    let a = &&&7;
+    print!("{} {} {} {}", ***a, **a, *a, a);
 }
