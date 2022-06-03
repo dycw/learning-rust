@@ -1,3 +1,4 @@
 fn main() {
-    println!("Hello, world!");
+    let n = 12;
+    let _ref_to_n = &n;
 }

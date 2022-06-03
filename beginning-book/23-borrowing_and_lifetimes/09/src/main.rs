@@ -1,3 +1,5 @@
 fn main() {
-    println!("Hello, world!");
+    let _n;
+    let _r = &_n;
+    _n = 12;
 }
