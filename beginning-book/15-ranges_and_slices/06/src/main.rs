@@ -1,3 +1,3 @@
 fn main() {
-    println!("Hello, world!");
+    let _r = 3u8..1200;
 }

@@ -1,3 +1,7 @@
 fn main() {
-    println!("Hello, world!");
+    let arr = [55, 22, 33, 44, 66, 7, 8];
+    let v = vec![55, 22, 33, 44, 66, 7, 8];
+    let sr1 = &arr[2..5];
+    let sr2 = &v[2..5];
+    print!("{:?} {:?} {:?} {:?}", sr1, sr2, &sr1[1..2], &sr1[1]);
 }

@@ -1,3 +1,8 @@
 fn main() {
-    println!("Hello, world!");
+    for i in 3.. {
+        if i * i > 40 {
+            break;
+        }
+        print!("{} ", i);
+    }
 }
