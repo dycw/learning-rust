@@ -1,3 +1,5 @@
 fn main() {
-    println!("Hello, world!");
+    for a in std::env::args() {
+        print!("[{}]", a);
+    }
 }

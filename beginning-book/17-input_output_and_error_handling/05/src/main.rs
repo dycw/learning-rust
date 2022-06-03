@@ -1,3 +1,5 @@
 fn main() {
-    println!("Hello, world!");
+    for var in std::env::vars() {
+        println!("[{}]=[{}]", var.0, var.1);
+    }
 }
