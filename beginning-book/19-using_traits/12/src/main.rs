@@ -1,3 +1,7 @@
 fn main() {
-    println!("Hello, world!");
+    let mut a = 'A';
+    let mut b = 'B';
+    print!("{}, {}; ", a, b);
+    std::mem::swap(&mut a, &mut b);
+    print!("{}, {}", a, b);
 }

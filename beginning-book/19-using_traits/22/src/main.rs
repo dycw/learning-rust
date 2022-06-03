@@ -1,3 +1,3 @@
 fn main() {
-    println!("Hello, world!");
+    impl Vec<i32> {}
 }
