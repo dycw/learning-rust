@@ -1,3 +1,5 @@
 fn main() {
-    println!("Hello, world!");
+    trait Tr {
+        fn f(x: &u8, b: bool) -> &u8;
+    }
 }
