@@ -1,3 +1,6 @@
 fn main() {
-    println!("Hello, world!");
+    let arr = ['a', 'b', 'c'];
+    for ch in arr.into_iter() {
+        print!("{}, ", ch);
+    }
 }
