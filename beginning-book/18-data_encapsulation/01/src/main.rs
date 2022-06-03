@@ -1,3 +1,7 @@
 fn main() {
-    println!("Hello, world!");
+    print!(
+        "{} {}",
+        "abcd".to_string(),
+        std::string::ToString::to_string("abcd")
+    );
 }
