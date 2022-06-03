@@ -1,3 +1,4 @@
 fn main() {
-    println!("Hello, world!");
+    let s = "€èe";
+    print!("{} {}", s.chars().count(), s.len());
 }

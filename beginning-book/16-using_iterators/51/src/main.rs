@@ -1,3 +1,5 @@
 fn main() {
-    println!("Hello, world!");
+    let s = "Hello";
+    println!("{:?}", s.chars().collect::<String>());
+    println!("{:?}", s.chars().collect::<Vec<char>>());
 }

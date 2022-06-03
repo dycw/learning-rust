@@ -1,3 +1,4 @@
 fn main() {
-    println!("Hello, world!");
+    let s: u32 = [0; 0].into_iter().sum();
+    print!("{}", s);
 }
