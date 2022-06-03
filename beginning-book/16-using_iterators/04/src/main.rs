@@ -1,3 +1,8 @@
 fn main() {
-    println!("Hello, world!");
+    fn print_codes(s: &str) {
+        for c in s.chars() {
+            println!("{}: {}", c, c as u32);
+        }
+    }
+    print_codes("€èe");
 }

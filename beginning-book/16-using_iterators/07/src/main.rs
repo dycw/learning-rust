@@ -1,3 +1,5 @@
 fn main() {
-    println!("Hello, world!");
+    for byte in "€èe".bytes() {
+        print!("{} ", byte);
+    }
 }
