@@ -1,3 +1,3 @@
 fn main() {
-    println!("Hello, world!");
+    let _num = Box::new(3);
 }

@@ -1,3 +1,7 @@
 fn main() {
-    println!("Hello, world!");
+    let a = 3;
+    {
+        let _a_ref = &a;
+    }
+    print!("{}", a);
 }
