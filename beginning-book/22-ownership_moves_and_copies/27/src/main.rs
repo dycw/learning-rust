@@ -1,3 +1,4 @@
 fn main() {
-    println!("Hello, world!");
+    struct S {}
+    impl Copy for S {}
 }

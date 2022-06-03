@@ -1,3 +1,5 @@
 fn main() {
-    println!("Hello, world!");
+    struct S {}
+    let s = S {};
+    let _ = s.clone();
 }

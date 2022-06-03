@@ -1,3 +1,7 @@
 fn main() {
-    println!("Hello, world!");
+    let i1 = Box::new(12345i16);
+    let i2 = i1.clone();
+    let i3 = i1;
+    // ILLEGAL: print!("{} ", i1);
+    print!("{} {}", i2, i3);
 }
