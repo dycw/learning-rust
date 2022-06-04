@@ -14,17 +14,7 @@ struct Args {
 
 fn main() {
     let args = Args::parse();
-    let names = vec![
-        "derive",
-        "returning traits with dyn",
-        "operator overloading",
-        "drop",
-        "iterators",
-        "impl trait",
-        "clone",
-        "supertraits",
-        "disambiguating overlapping traits",
-    ];
+    let names = vec!["syntax", "dry", "dsl", "variadics"];
     core(&args.chapter, &names);
 }
 
