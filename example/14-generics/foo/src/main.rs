@@ -4,7 +4,7 @@ use inflector::{cases::snakecase, Inflector};
 
 fn main() {
     let chapter = 14;
-    let names = [
+    let names = vec![
         "functions",
         "implementation",
         "traits",
@@ -15,6 +15,9 @@ fn main() {
         "associated items",
         "phantom type parameters",
     ];
+    core(chapter, names);
+}
+fn core(chapter: u64, names: Vec<&str>) {
     let snake_names = names.iter().map(|n| n.to_snake_case()).collect::<Vec<_>>();
     let enum_names = (1..)
         .zip(snake_names)
