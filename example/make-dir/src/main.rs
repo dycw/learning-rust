@@ -13,19 +13,9 @@ struct Args {
 }
 
 fn main() {
-    let _args = Args::parse();
-    let names = vec![
-        "functions",
-        "implementation",
-        "traits",
-        "bounds",
-        "multiple bounds",
-        "where clauses",
-        "new type idiom",
-        "associated items",
-        "phantom type parameters",
-    ];
-    core(14, names);
+    let args = Args::parse();
+    let names = vec!["rall", "ownership and moves", "borrowing", "lifetimes"];
+    core(args.chapter, names);
 }
 
 fn core(chapter: u64, names: Vec<&str>) {
