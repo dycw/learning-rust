@@ -14,7 +14,16 @@ struct Args {
 
 fn main() {
     let args = Args::parse();
-    let names = vec!["alternate custom key types", "hashset"];
+    let names = vec![
+        "threads",
+        "channels",
+        "path",
+        "file_io",
+        "child processes",
+        "filesystem operations",
+        "program arguments",
+        "foreign function interface",
+    ];
     core(&args.chapter, &names);
 }
 
