@@ -31,7 +31,7 @@ fn core(chapter: u64, names: Vec<&str>) {
     let snake_names = names.iter().map(|n| n.to_snake_case()).collect::<Vec<_>>();
     let enum_names = (1..)
         .zip(snake_names)
-        .map(|(i, n)| format!("mkdir {}.{}-{}", chapter, i, n))
+        .map(|(i, n)| format!("{}.{}-{}", chapter, i, n))
         .collect::<Vec<_>>();
     let (oks, errors): (Vec<_>, Vec<_>) = enum_names
         .iter()
