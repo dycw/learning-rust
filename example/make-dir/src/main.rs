@@ -14,13 +14,7 @@ struct Args {
 
 fn main() {
     let args = Args::parse();
-    let names = vec![
-        "pulling results out of options",
-        "defining an error type",
-        "boxing errors",
-        "other uses of ",
-        "wrapping errors",
-    ];
+    let names = vec!["alternate custom key types", "hashset"];
     core(&args.chapter, &names);
 }
 
