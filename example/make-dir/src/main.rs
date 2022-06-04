@@ -15,15 +15,15 @@ struct Args {
 fn main() {
     let args = Args::parse();
     let names = vec![
-        "explicit annotation",
-        "functions",
-        "methods",
-        "structs",
-        "traits",
-        "bounds",
-        "coercion",
-        "static",
-        "elision",
+        "derive",
+        "returning traits with dyn",
+        "operator overloading",
+        "drop",
+        "iterators",
+        "impl trait",
+        "clone",
+        "supertraits",
+        "disambiguating overlapping traits",
     ];
     core(&args.chapter, &names);
 }
