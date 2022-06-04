@@ -1,6 +1,4 @@
-
-
-use inflector::{Inflector};
+use inflector::Inflector;
 
 fn main() {
     let chapter = 14;
