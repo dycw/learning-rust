@@ -14,7 +14,7 @@ struct Args {
 
 fn main() {
     let args = Args::parse();
-    let names = vec!["syntax", "dry", "dsl", "variadics"];
+    let names = vec!["designators", "overload", "repeat"];
     core(&args.chapter, &names);
 }
 
