@@ -1,5 +1,6 @@
 use std::{fs::create_dir, io::Result, iter::Zip};
 
+
 use inflector::{cases::snakecase, Inflector};
 
 fn main() {
