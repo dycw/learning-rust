@@ -1,7 +1,6 @@
-use std::{fs::create_dir, io::Result, iter::Zip};
 
 
-use inflector::{cases::snakecase, Inflector};
+use inflector::{Inflector};
 
 fn main() {
     let chapter = 14;
