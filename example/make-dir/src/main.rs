@@ -15,14 +15,10 @@ struct Args {
 fn main() {
     let args = Args::parse();
     let names = vec![
-        "threads",
-        "channels",
-        "path",
-        "file_io",
-        "child processes",
-        "filesystem operations",
-        "program arguments",
-        "foreign function interface",
+        "unit testing",
+        "documentation testing",
+        "integration testing",
+        "dev-dependencies",
     ];
     core(&args.chapter, &names);
 }
