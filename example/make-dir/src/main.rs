@@ -6,7 +6,7 @@ use inflector::Inflector;
 #[derive(Parser, Debug)]
 struct Args {
     #[clap(short, long)]
-    chapter: u64,
+    chapter: String,
 
     #[clap(short, long)]
     names: Vec<String>,
@@ -14,11 +14,21 @@ struct Args {
 
 fn main() {
     let args = Args::parse();
-    let names = vec!["rall", "ownership and moves", "borrowing", "lifetimes"];
-    core(args.chapter, names);
+    let names = vec![
+        "explicit annotation",
+        "functions",
+        "methods",
+        "structs",
+        "traits",
+        "bounds",
+        "coercion",
+        "static",
+        "elision",
+    ];
+    core(&args.chapter, &names);
 }
 
-fn core(chapter: u64, names: Vec<&str>) {
+fn core(chapter: &str, names: &Vec<&str>) {
     let snake_names = names.iter().map(|n| n.to_snake_case()).collect::<Vec<_>>();
     let enum_names = (1..)
         .zip(snake_names)
