@@ -7,12 +7,13 @@ use inflector::Inflector;
 struct Args {
     #[clap(short, long)]
     chapter: u64,
-    // #[clap(short, long)]
-    // names: Vec<String>,
+
+    #[clap(short, long)]
+    names: Vec<String>,
 }
 
 fn main() {
-    let args = Args::parse();
+    let _args = Args::parse();
     let names = vec![
         "functions",
         "implementation",
@@ -24,7 +25,7 @@ fn main() {
         "associated items",
         "phantom type parameters",
     ];
-    core(args.chapter, names);
+    core(14, names);
 }
 
 fn core(chapter: u64, names: Vec<&str>) {
@@ -37,7 +38,7 @@ fn core(chapter: u64, names: Vec<&str>) {
         .iter()
         .map(|n| {
             println!("Making directory: {}", n);
-            create_dir(n)
+            create_dir(format!("../{}", n))
         })
         .partition(Result::is_ok);
     println!("{:?}", oks);
