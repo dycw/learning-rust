@@ -1,3 +1,5 @@
+exclude: ^rustlings/
+
 repos:
   # fixers
   - repo: https://github.com/pre-commit/mirrors-prettier
