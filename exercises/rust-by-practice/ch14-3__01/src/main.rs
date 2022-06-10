@@ -1,3 +1,4 @@
-fn main() {
-    println!("Hello, world!");
-}
+use std::fmt::Result;
+use std::io::Result;
+
+fn main() {}
