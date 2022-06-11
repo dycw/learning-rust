@@ -1,4 +1,4 @@
-# Beginning Rust: From Novice to Professional (Carlo Milanesi)
+# Hands-On Functional Programming in Rust (Andrew Johnson)
 
-- [Book](https://link.springer.com/book/10.1007/978-1-4842-3468-6)
-- [Repo](https://github.com/Apress/beginning-rust)
+- [Book](https://www.packtpub.com/product/hands-on-functional-programming-in-rust/9781788839358)
+- [Repo](https://github.com/packtpublishing/hands-on-functional-programming-in-rust)
