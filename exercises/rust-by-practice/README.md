@@ -1,4 +1,4 @@
-# `rust-by-practice`
+# Rust by Practice
 
+- [Book](https://practice.rs)
 - [Repo](https://github.com/sunface/rust-by-practice)
-- [Book](https://practice.rs/why-exercise.html)
