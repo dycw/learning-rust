@@ -1,3 +1,7 @@
+/* Refactoring the following code using iterators */
 fn main() {
-    println!("Hello, world!");
+    let arr = [0; 10];
+    for i in arr {
+        println!("{}", i)
+    }
 }
