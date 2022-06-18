@@ -1,4 +1,4 @@
-use idiomatic_rust_constructors::{Post, Role, User};
+use idiomatic_rust_constructors::{Post, User};
 
 fn main() {
     let user1 = User::new("testuser1234".to_string()).unwrap_or_default();
