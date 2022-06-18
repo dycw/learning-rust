@@ -11,3 +11,4 @@
 | Exercises | [Rust by Example](./exercises/rust-by-example)                                    |
 | Exercises | [Rust by Practice](./exercises/rust-by-practice)                                  |
 | Exercises | [Rustlings](./exercises/rustlings)                                                |
+| Videos    | [Let's Get Rusty](./videos/rusty)                                                 |
