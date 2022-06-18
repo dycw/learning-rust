@@ -6,6 +6,8 @@ repos:
     rev: v2.6.2
     hooks:
       - id: prettier
+        additional_dependencies:
+          - "prettier-plugin-toml@latest"
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.2.0
     hooks:
