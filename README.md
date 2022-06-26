@@ -9,6 +9,7 @@
 | Book      | [Hands-On Functional Programming in Rust](./books/functional) (Andrew Johnson)              |
 | Book      | [Programming Rust](./books/programming-rust) (Jim Blandy, Jason Orendorff, Leonara Tindall) |
 | Book      | [Rust in Action](./books/action) (Tim McNamara)                                             |
+| Courses   | [Ultimate Rust Crash Course](./courses/ultimate-rust-crash-course) (Nathan Stocks)          |
 | Exercises | [Rust by Example](./exercises/rust-by-example)                                              |
 | Exercises | [Rust by Practice](./exercises/rust-by-practice)                                            |
 | Exercises | [Rustlings](./exercises/rustlings)                                                          |
